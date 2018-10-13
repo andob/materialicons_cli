@@ -1,5 +1,7 @@
 # materialicons_cli
 
+[![Android Arsenal]( https://img.shields.io/badge/Android%20Arsenal-materialicons__cli-green.svg?style=flat )]( https://android-arsenal.com/details/1/7199 )
+
 A command line tool to install and uninstall icons from https://materialdesignicons.com/ into Android Studio projects. Written in Kotlin
 
 ## Setup
