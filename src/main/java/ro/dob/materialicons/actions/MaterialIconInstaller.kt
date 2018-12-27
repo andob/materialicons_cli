@@ -13,12 +13,13 @@ import java.util.zip.ZipInputStream
 class MaterialIconInstaller
 (
         val color : Color,
-        val size : Size
-) : MaterialIconAction()
+        val size : Size,
+        moduleName : String
+) : MaterialIconAction(moduleName)
 {
     var zipPath : String = ""
 
-    constructor(zipPath : String, color : Color, size : Size) : this(color, size)
+    constructor(zipPath : String, color : Color, size : Size, moduleName : String) : this(color, size, moduleName)
     {
         this.zipPath=zipPath.replace("~", System.getProperty("user.home"))
     }

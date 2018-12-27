@@ -8,7 +8,7 @@ class MaterialIconUninstaller : MaterialIconAction
     var fileName : String = ""
     val filePaths : MutableList<String> = mutableListOf()
 
-    constructor(fileName : String) : super()
+    constructor(fileName : String, moduleName : String) : super(moduleName)
     {
         this.fileName=
             if (fileName.endsWith(".png"))
