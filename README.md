@@ -64,6 +64,18 @@ drawable-xxhdpi/ic_access_point_black_24dp.png
 drawable-xxxhdpi/ic_access_point_black_24dp.png
 ```
 
+## Custom module name
+
+If your module name is other than ``app``, you can specify it as the last argument of a command. Example:
+
+``
+java -jar ~/Downloads/material_icons.jar install ~/Downloads/access-point.zip black 24 library
+``
+
+``
+java -jar ~/Downloads/material_icons.jar uninstall ic_access_point_black_24dp library
+``
+
 ## License
 
 ```
