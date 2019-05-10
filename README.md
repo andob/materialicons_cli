@@ -10,76 +10,35 @@ A command line tool to install and uninstall icons from https://materialdesignic
 
 ## Installing an icon
 
-1. Go to [MaterialDesignIcons.com](https://materialdesignicons.com/). Find an icon. Choose (download) Icon package -> Android 5.x. You'll get a zip file with the icons
+1. Go to [MaterialDesignIcons.com](https://materialdesignicons.com/). Find an icon. Remember the icon the name (hover the icon to see its name).
 
-1. Open a terminal. Go to the root of your Android Studio project
+2. Open a terminal. Go to the root of your Android Studio project
 
-1. Run
-
-```
-java -jar /path_to/material_icons.jar install path_to_zip color size
-```
-
-Where color = white, grey or black, size = 18,24,36,48. Example usage:
+3. Run the icon installer. Syntax:
 
 ```
-cd Desktop/my-awesome-app/
-java -jar ~/Downloads/material_icons.jar install ~/Downloads/access-point.zip black 24
+java -jar /path/to/material_icons.jar iconName -color <color> -size <size> [-moduleName <moduleName>]
+
+iconName                 Icon name (access-point) or icon pack path (~/Downloads/access-point.zip).
+                         if you specify an icon name, the icon will be automatically downloaded
+-color <color>           Required, icon color: white, black, grey
+                         or custom color in HEX (ex: red=f10000)
+-size <size>             Required, icon size in dp: 18, 24, 36, 48
+                         or any other number (size in dp)
+-moduleName <moduleName> Optional, moduleName name (default value=app)
+
+Examples:
+java -jar ./material_icons.jar install ~/Downloads/access-point.zip -color black -size 24
+Copies black 24dp icons from the zip to drawable dirs: drawable-.../ic_access_point_black_24dp.png
+
+java -jar ./material_icons.jar install access-point -color red=F21122 -size 15 -moduleName library
+Downloads the icon pack, generates 15dp #F23122 red icons to drawable dirs from the library module: drawable-.../ic_access_point_red_15dp.png
 ```
-
-Copies the following files:
-
-```
-drawable-mdpi/ic_access_point_black_24dp.png
-drawable-hdpi/ic_access_point_black_24dp.png
-drawable-xhdpi/ic_access_point_black_24dp.png
-drawable-xxhdpi/ic_access_point_black_24dp.png
-drawable-xxxhdpi/ic_access_point_black_24dp.png
-```
-
-## Uninstalling an icon
-
-1. Open a terminal. Go to the root of your Android Studio project
-
-1. Run
-
-```
-java -jar /path_to/material_icons.jar uninstall file_name.png
-```
-
-Example usage:
-
-```
-cd Desktop/my-awesome-app/
-java -jar ~/Downloads/material_icons.jar uninstall ic_access_point_black_24dp
-```
-
-Removes the following files:
-
-```
-drawable-mdpi/ic_access_point_black_24dp.png
-drawable-hdpi/ic_access_point_black_24dp.png
-drawable-xhdpi/ic_access_point_black_24dp.png
-drawable-xxhdpi/ic_access_point_black_24dp.png
-drawable-xxxhdpi/ic_access_point_black_24dp.png
-```
-
-## Custom module name
-
-If your module name is other than ``app``, you can specify it as the last argument of a command. Example:
-
-``
-java -jar ~/Downloads/material_icons.jar install ~/Downloads/access-point.zip black 24 library
-``
-
-``
-java -jar ~/Downloads/material_icons.jar uninstall ic_access_point_black_24dp library
-``
 
 ## License
 
 ```
-Copyright 2018 Dobrescu Andrei  
+Copyright 2018 - 2019 Dobrescu Andrei  
 
 Licensed under the Apache License, Version 2.0 (the "License"); 
 you may not use this file except in compliance with the License. 

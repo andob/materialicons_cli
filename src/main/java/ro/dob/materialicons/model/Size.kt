@@ -1,36 +1,5 @@
 package ro.dob.materialicons.model
 
-enum class Size
-{
-    _18,
-    _24,
-    _36,
-    _48,
-    Nil;
+fun Int.isStandardSize() = this==18||this==24||this==36||this==48
 
-    override fun toString(): String
-    {
-        return toInt().toString()
-    }
-
-    fun toInt() : Int = when (this)
-    {
-        _18 -> 18
-        _24 -> 24
-        _36 -> 36
-        _48 -> 48
-        Nil -> 0
-    }
-
-    companion object
-    {
-        fun fromInt(value : Int) : Size = when(value)
-        {
-            18 -> _18
-            24 -> _24
-            36 -> _36
-            48 -> _48
-            else -> Nil
-        }
-    }
-}
+const val MAX_ICON_SIZE_IN_DP = 48
