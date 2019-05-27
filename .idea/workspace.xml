@@ -72,6 +72,7 @@
       <find>bigg</find>
       <find>java.awt.color</find>
       <find>awt.color</find>
+      <find>install</find>
     </findStrings>
   </component>
   <component name="IdeDocumentHistory">
@@ -121,12 +122,12 @@
         <option value="$PROJECT_DIR$/src/main/java/ro/dob/materialicons/IconTinter.kt" />
         <option value="$PROJECT_DIR$/src/main/java/ro/dob/materialicons/model/Color.kt" />
         <option value="$PROJECT_DIR$/src/main/java/ro/dob/materialicons/Tinter.kt" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/src/main/java/ro/dob/materialicons/Main.kt" />
         <option value="$PROJECT_DIR$/src/main/java/ro/dob/materialicons/InputArgumentsParser.kt" />
-        <option value="$PROJECT_DIR$/src/main/java/ro/dob/materialicons/model/Constants.kt" />
         <option value="$PROJECT_DIR$/src/main/java/ro/dob/materialicons/Main.java" />
         <option value="$PROJECT_DIR$/build.gradle" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/src/main/java/ro/dob/materialicons/model/Constants.kt" />
       </list>
     </option>
   </component>
@@ -136,50 +137,39 @@
     <option name="height" value="1057" />
   </component>
   <component name="ProjectView">
-    <navigator currentView="ProjectPane" proportions="" version="1">
+    <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
-      <pane id="AndroidView" />
-      <pane id="ProjectPane">
+      <pane id="ProjectPane" />
+      <pane id="AndroidView">
         <subPane>
           <expand>
             <path>
-              <item name="materialicons_cli" type="b2602c69:ProjectViewProjectNode" />
-              <item name="materialicons_cli" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="materialicons_cli" type="1abcf292:AndroidViewProjectNode" />
+              <item name="materialicons_cli" type="e9137016:NonAndroidModuleNode" />
             </path>
             <path>
-              <item name="materialicons_cli" type="b2602c69:ProjectViewProjectNode" />
-              <item name="materialicons_cli" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="materialicons_cli" type="1abcf292:AndroidViewProjectNode" />
+              <item name="materialicons_cli" type="e9137016:NonAndroidModuleNode" />
+              <item name="java" type="f7eae187:NonAndroidSourceTypeNode" />
             </path>
             <path>
-              <item name="materialicons_cli" type="b2602c69:ProjectViewProjectNode" />
-              <item name="materialicons_cli" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="materialicons_cli" type="b2602c69:ProjectViewProjectNode" />
-              <item name="materialicons_cli" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="materialicons_cli" type="b2602c69:ProjectViewProjectNode" />
-              <item name="materialicons_cli" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="materialicons_cli" type="1abcf292:AndroidViewProjectNode" />
+              <item name="materialicons_cli" type="e9137016:NonAndroidModuleNode" />
+              <item name="java" type="f7eae187:NonAndroidSourceTypeNode" />
               <item name="materialicons" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="materialicons_cli" type="1abcf292:AndroidViewProjectNode" />
+              <item name="Gradle Scripts" type="ae0cef3a:AndroidBuildScriptsGroupNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -349,7 +339,7 @@
       <window_info id="Build Variants" order="4" side_tool="true" />
       <window_info id="Image Layers" order="5" />
       <window_info id="Capture Tool" order="6" />
-      <window_info active="true" content_ui="combo" id="Project" order="7" visible="true" weight="0.21512248" />
+      <window_info active="true" content_ui="combo" id="Project" order="7" visible="true" weight="0.2172524" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32908705" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32908705" />
@@ -591,12 +581,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-xxxhdpi/ic_view_day_red_96dp.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-hdpi/ic_view_day_red_96dp.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-xxxhdpi/ic_view_day_red_96dp.png" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-hdpi/ic_view_day_red_96dp.png" />
     <entry file="file://$PROJECT_DIR$/src/main/java/ro/dob/materialicons/model/Color.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="375">
@@ -635,30 +621,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ro/dob/materialicons/Main.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="25" lean-forward="true" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
-          <folding>
-            <element signature="e#30#89#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="96" selection-start-line="8" selection-start-column="82" selection-end-line="8" selection-end-column="96" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ro/dob/materialicons/model/Constants.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ro/dob/materialicons/Main.kt" />
     <entry file="file://$PROJECT_DIR$/src/main/java/ro/dob/materialicons/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
@@ -684,6 +647,20 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
           <caret line="28" column="16" selection-start-line="28" selection-start-column="16" selection-end-line="28" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="495">
+          <caret line="33" column="31" selection-start-line="33" selection-start-column="31" selection-end-line="33" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ro/dob/materialicons/model/Constants.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="26" column="31" selection-start-line="26" selection-start-column="31" selection-end-line="26" selection-end-column="31" />
         </state>
       </provider>
     </entry>

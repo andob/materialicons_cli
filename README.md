@@ -2,7 +2,7 @@
 
 [![Android Arsenal]( https://img.shields.io/badge/Android%20Arsenal-materialicons__cli-green.svg?style=flat )]( https://android-arsenal.com/details/1/7199 )
 
-A command line tool to install and uninstall icons from https://materialdesignicons.com/ into Android Studio projects. Written in Kotlin
+A command line tool to install icons from https://materialdesignicons.com/ into Android Studio projects. Written in Kotlin
 
 ## Setup
 
@@ -28,10 +28,10 @@ iconName                 Icon name (access-point) or icon pack path (~/Downloads
 -moduleName <moduleName> Optional, moduleName name (default value=app)
 
 Examples:
-java -jar ./material_icons.jar install ~/Downloads/access-point.zip -color black -size 24
+java -jar ./material_icons.jar ~/Downloads/access-point.zip -color black -size 24
 Copies black 24dp icons from the zip to drawable dirs: drawable-.../ic_access_point_black_24dp.png
 
-java -jar ./material_icons.jar install access-point -color red=F21122 -size 15 -moduleName library
+java -jar ./material_icons.jar access-point -color red=F21122 -size 15 -moduleName library
 Downloads the icon pack, generates 15dp #F23122 red icons to drawable dirs from the library module: drawable-.../ic_access_point_red_15dp.png
 ```
 
