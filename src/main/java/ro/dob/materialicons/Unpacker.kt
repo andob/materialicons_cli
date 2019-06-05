@@ -22,68 +22,68 @@ fun unpackIconPack(iconPackFile : File,
     {
         fileInput=FileInputStream(iconPackFile)
         zipInput=ZipInputStream(fileInput)
-        var entry=zipInput.nextEntry
+        var zipEntry=zipInput.nextEntry
 
-        while(entry.isDirectory)
-            entry=zipInput.nextEntry
+        while(zipEntry.isDirectory)
+            zipEntry=zipInput.nextEntry
 
-        while(entry!=null)
+        val outputFileNameTransformers=mutableListOf<(String) -> (String)>()
+        var zipFileColorName : String = color.name
+        var zipFileSize : Int = size
+
+        if (!color.isStandardColor())
         {
-            val outputFileNameTransformers=mutableListOf<(String) -> (String)>()
-            var zipFileColorName : String = color.name
-            var zipFileSize : Int = size
-
-            if (!color.isStandardColor())
-            {
-                zipFileColorName=Colors.White.name
-                outputFileNameTransformers.add { fileName ->
-                    fileName.replace("_${zipFileColorName}_", "_${color.name}_")
-                }
+            zipFileColorName=Colors.White.name
+            outputFileNameTransformers.add { fileName ->
+                fileName.replace("_${zipFileColorName}_", "_${color.name}_")
             }
+        }
 
-            if (!size.isStandardSize())
-            {
-                zipFileSize=48
-                outputFileNameTransformers.add { fileName ->
-                    fileName.replace("_${zipFileSize}dp", "_${size}dp")
-                }
+        if (!size.isStandardSize())
+        {
+            zipFileSize=48
+            outputFileNameTransformers.add { fileName ->
+                fileName.replace("_${zipFileSize}dp", "_${size}dp")
             }
+        }
 
-            if (entry.name.contains(zipFileColorName)&&
-                entry.name.contains(zipFileSize.toString()))
+        while(zipEntry!=null)
+        {
+            if (zipEntry.name.contains(zipFileColorName)&&
+                zipEntry.name.contains(zipFileSize.toString()))
             {
-                var outputFileName=entry.name
+                var outputFileName=zipEntry.name
                 for (outputFileNameTransformer in outputFileNameTransformers)
                     outputFileName=outputFileNameTransformer(outputFileName)
                 val outputFile=File(outputPath+outputFileName)
-                var out : FileOutputStream? = null
+                var outputFileStream : FileOutputStream? = null
 
                 try
                 {
-                    out=FileOutputStream(outputFile)
+                    outputFileStream=FileOutputStream(outputFile)
                     val buffer=ByteArray(UNZIP_BUFFER_SIZE)
-                    var len : Int
+                    var numberOfReadBytes : Int
 
                     do
                     {
-                        len=zipInput.read(buffer, 0, UNZIP_BUFFER_SIZE)
-                        if (len>0)
+                        numberOfReadBytes=zipInput.read(buffer, 0, UNZIP_BUFFER_SIZE)
+                        if (numberOfReadBytes>0)
                         {
-                            out.write(buffer, 0, len)
+                            outputFileStream.write(buffer, 0, numberOfReadBytes)
                         }
                     }
-                    while(len>0)
+                    while(numberOfReadBytes>0)
                 }
                 finally
                 {
-                    out?.close()
+                    outputFileStream?.close()
                 }
 
                 if (!color.isStandardColor()) tintIcon(file = outputFile, color = color)
                 if (!size.isStandardSize()) resizeIcon(file = outputFile, widthInDp = size, heightInDp = size)
             }
 
-            entry=zipInput.nextEntry
+            zipEntry=zipInput.nextEntry
         }
     }
     finally
@@ -98,7 +98,7 @@ fun createDrawableDirs(outputPath : String)
 {
     DrawableDir.forEach { drawableDir ->
         val dirPath=outputPath+drawableDir
-        val dir= File(dirPath)
+        val dir=File(dirPath)
         if (!dir.exists())
             dir.mkdir()
     }

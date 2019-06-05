@@ -17,15 +17,15 @@ object InputArgumentsParser
             throw RuntimeException("Please specify size")
 
         val iconName=args[0].replace("~", System.getProperty("user.home"))
-        var iconPackFile= File(iconName)
+        var iconPackFile=File(iconName)
         if (!iconPackFile.exists())
         {
-            iconPackFile= File("temp.zip")
+            iconPackFile=File("temp.zip")
             downloadIcon(iconName = iconName, outputFile = iconPackFile)
             iconPackFile.deleteOnExit()
         }
 
-        val color= Color.parse(args[args.indexOfFirst { it==KEY_COLOR }+1])
+        val color=Color.parse(args[args.indexOfFirst { it==KEY_COLOR }+1])
         val size=args[args.indexOfFirst { it==KEY_SIZE }+1].toInt()
         val moduleName=if (args.contains(KEY_MODULE))
             args[args.indexOfFirst { it==KEY_MODULE }+1]

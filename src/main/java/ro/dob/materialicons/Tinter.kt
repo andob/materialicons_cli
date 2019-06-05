@@ -40,7 +40,7 @@ fun tintIcon(file : File, color : Color)
     maskImageGraphics.fillRect(0, 0, image.width, image.height)
     maskImageGraphics.dispose()
 
-    val tintedImageGraphics = tintedImage.createGraphics()
+    val tintedImageGraphics=tintedImage.createGraphics()
     tintedImageGraphics.applyQualityRenderingHints()
     tintedImageGraphics.drawImage(image, 0, 0, null)
     tintedImageGraphics.drawImage(maskImage, 0, 0, null)
