@@ -18,7 +18,7 @@ iconName                 Icon name (access-point) or icon pack path (~/Downloads
                          or custom color in HEX (ex: red=f10000)
 -size <size>             Required, icon size in dp: 18, 24, 36, 48
                          or any other number (size in dp)
--moduleName <moduleName> Optional, moduleName name (default value=app)
+-moduleName <moduleName> Optional, module name (default value=app)
 
 Examples:
 java -jar ./material_icons.jar ~/Downloads/access-point.zip -color black -size 24

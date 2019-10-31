@@ -17,18 +17,21 @@ data class Color
             "grey",  "7f7f7f" -> Colors.Grey
             else ->
             {
-                val tokens=colorName.split("=")
-                val hexCode=tokens[1]
-                val intColor=Integer.parseInt(hexCode.replaceFirst("#", ""), 16)
-                Color(red   = ((intColor and 0xff0000) shr 16).toShort(),
-                      green = ((intColor and 0xff00) shr 8).toShort(),
-                      blue  =  (intColor and 0xff).toShort(),
-                      name  = tokens[0])
+                val matchResult="[A-Za-z]*=(#?)[0-9a-fA-F]*".toRegex().find(colorName)
+                if (matchResult!=null&&matchResult.groups.firstOrNull()?.value==colorName)
+                {
+                    val tokens=colorName.split("=")
+                    val hexCode=tokens[1]
+                    val intColor=Integer.parseInt(hexCode.replaceFirst("#", ""), 16)
+                    Color(red   = ((intColor and 0xff0000) shr 16).toShort(),
+                        green = ((intColor and 0xff00) shr 8).toShort(),
+                        blue  =  (intColor and 0xff).toShort(),
+                        name  = tokens[0])
+                }
+                else throw RuntimeException("invalid color: $colorName")
             }
         }
     }
-
-    fun isStandardColor() = this==Colors.White||this==Colors.Grey||this==Colors.Black
 }
 
 object Colors

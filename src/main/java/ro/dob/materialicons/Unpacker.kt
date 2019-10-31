@@ -28,29 +28,29 @@ fun unpackIconPack(iconPackFile : File,
             zipEntry=zipInput.nextEntry
 
         val outputFileNameTransformers=mutableListOf<(String) -> (String)>()
-        var zipFileColorName : String = color.name
-        var zipFileSize : Int = size
+        var zipIconColorName : String = color.name
+        var zipIconSize : Int = size
 
-        if (!color.isStandardColor())
+        if (color!=Colors.White&&color!=Colors.Grey&&color!=Colors.Black)
         {
-            zipFileColorName=Colors.White.name
+            zipIconColorName=Colors.White.name
             outputFileNameTransformers.add { fileName ->
-                fileName.replace("_${zipFileColorName}_", "_${color.name}_")
+                fileName.replace("_${zipIconColorName}_", "_${color.name}_")
             }
         }
 
-        if (!size.isStandardSize())
+        if (size!=18&&size!=24&&size!=36&&size!=48)
         {
-            zipFileSize=48
+            zipIconSize=48
             outputFileNameTransformers.add { fileName ->
-                fileName.replace("_${zipFileSize}dp", "_${size}dp")
+                fileName.replace("_${zipIconSize}dp", "_${size}dp")
             }
         }
 
         while(zipEntry!=null)
         {
-            if (zipEntry.name.contains(zipFileColorName)&&
-                zipEntry.name.contains(zipFileSize.toString()))
+            if (zipEntry.name.contains(zipIconColorName)&&
+                zipEntry.name.contains(zipIconSize.toString()))
             {
                 var outputFileName=zipEntry.name
                 for (outputFileNameTransformer in outputFileNameTransformers)
@@ -79,8 +79,11 @@ fun unpackIconPack(iconPackFile : File,
                     outputFileStream?.close()
                 }
 
-                if (!color.isStandardColor()) tintIcon(file = outputFile, color = color)
-                if (!size.isStandardSize()) resizeIcon(file = outputFile, widthInDp = size, heightInDp = size)
+                if (color!=Colors.White&&color!=Colors.Grey&&color!=Colors.Black)
+                    tintIcon(file = outputFile, color = color)
+
+                if (size!=18&&size!=24&&size!=36&&size!=48)
+                    resizeIcon(file = outputFile, widthInDp = size, heightInDp = size)
             }
 
             zipEntry=zipInput.nextEntry

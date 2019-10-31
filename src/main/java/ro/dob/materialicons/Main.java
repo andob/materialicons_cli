@@ -14,6 +14,8 @@ public class Main
         {
             if (ConstantsKt.DEBUG)
                 ex.printStackTrace();
+            try { Thread.sleep(10); }
+            catch (Exception ex1) {}
             System.out.println(ConstantsKt.SYNTAX_DESCRIPTION);
         }
     }
