@@ -38,7 +38,7 @@ Downloads the icon pack, generates 15dp #F23122 red icons to drawable dirs from 
 ## License
 
 ```
-Copyright 2018 - 2019 Dobrescu Andrei  
+Copyright 2018 - 2020 Dobrescu Andrei  
 
 Licensed under the Apache License, Version 2.0 (the "License"); 
 you may not use this file except in compliance with the License. 
