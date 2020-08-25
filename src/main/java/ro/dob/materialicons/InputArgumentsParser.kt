@@ -7,6 +7,7 @@ object InputArgumentsParser
 {
     const val KEY_COLOR = "-color"
     const val KEY_SIZE = "-size"
+    const val KEY_VECTORIAL = "-vectorial"
     const val KEY_MODULE = "-moduleName"
 
     fun parse(args : Array<String>)
@@ -27,14 +28,27 @@ object InputArgumentsParser
 
         val color=Color.parse(args[args.indexOfFirst { it==KEY_COLOR }+1])
         val size=args[args.indexOfFirst { it==KEY_SIZE }+1].toInt()
+        val shouldUseVectorialImage=args.contains(KEY_VECTORIAL)
         val moduleName=if (args.contains(KEY_MODULE))
             args[args.indexOfFirst { it==KEY_MODULE }+1]
         else "app"
 
-        unpackIconPack(
+        if (shouldUseVectorialImage)
+        {
+            unpackIconPackVectorialFile(
+                iconPackFile = iconPackFile,
+                iconName = iconName,
+                color = color,
+                size = size,
+                moduleName = moduleName)
+        }
+        else
+        {
+            unpackIconPackPNGFiles(
                 iconPackFile = iconPackFile,
                 color = color,
                 size = size,
                 moduleName = moduleName)
+        }
     }
 }

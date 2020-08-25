@@ -6,7 +6,7 @@ A command line tool to install icons from https://materialdesignicons.com/ into 
 
 ## Setup
 
-[Download the jar package](http://maven.andob.info/repository/open_source/ro/andob/materialicons/materialicons/1.1.0/materialicons-1.1.0.jar)
+[Download the jar package](maven.andob.info/repository/open_source/ro/andob/materialicons/materialicons/1.1.1/materialicons-1.1.1.jar)
 
 ## Installing an icon
 
@@ -17,7 +17,9 @@ A command line tool to install icons from https://materialdesignicons.com/ into 
 3. Run the icon installer. Syntax:
 
 ```
-java -jar /path/to/material_icons.jar iconName -color <color> -size <size> [-moduleName <moduleName>]
+Syntax:
+
+java -jar /path/to/material_icons.jar iconName -color <color> -size <size> [-vectorial] [-moduleName <moduleName>]
 
 iconName                 Icon name (access-point) or icon pack path (~/Downloads/access-point.zip).
                          if you specify an icon name, the icon will be automatically downloaded
@@ -25,14 +27,18 @@ iconName                 Icon name (access-point) or icon pack path (~/Downloads
                          or custom color in HEX (ex: red=f10000)
 -size <size>             Required, icon size in dp: 18, 24, 36, 48
                          or any other number (size in dp)
+-vectorial               Optional, to import vectorial (XML) icons rather than raster (PNG) icons.
 -moduleName <moduleName> Optional, module name (default value=app)
 
 Examples:
 java -jar ./material_icons.jar ~/Downloads/access-point.zip -color black -size 24
-Copies black 24dp icons from the zip to drawable dirs: drawable-.../ic_access_point_black_24dp.png
+Copies black 24dp png icons from the zip to drawable dirs: drawable-.../ic_access_point_black_24dp.png
 
 java -jar ./material_icons.jar access-point -color red=F21122 -size 15 -moduleName library
 Downloads the icon pack, generates 15dp #F23122 red icons to drawable dirs from the library module: drawable-.../ic_access_point_red_15dp.png
+
+java -jar ./material_icons.jar access-point -color white -size 20 -vectorial
+Downloads the icon pack, generates 20dp white vector icon to drawable dir: drawable/ic_access_point_white_20dp.xml
 ```
 
 ## License

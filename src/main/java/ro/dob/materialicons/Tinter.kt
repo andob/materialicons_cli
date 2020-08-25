@@ -1,6 +1,7 @@
 package ro.dob.materialicons
 
 import ro.dob.materialicons.model.Color
+import ro.dob.materialicons.model.VectorialIcon
 import java.awt.*
 import java.awt.image.BufferedImage
 import java.io.File
@@ -26,7 +27,7 @@ private fun Graphics2D.applyQualityRenderingHints()
     setRenderingHint(RenderingHints.KEY_STROKE_CONTROL, RenderingHints.VALUE_STROKE_PURE)
 }
 
-fun tintIcon(file : File, color : Color)
+fun tintPNGIcon(file : File, color : Color)
 {
     val image=ImageIO.read(file)
     val tintedImage=image.createCompatibleImage()
@@ -47,4 +48,11 @@ fun tintIcon(file : File, color : Color)
     tintedImageGraphics.dispose()
 
     ImageIO.write(tintedImage, "png", file)
+}
+
+fun tintVectorialIcon(icon : VectorialIcon, color : Color)
+{
+    icon.xmlCode=icon.xmlCode.replaceFirst(
+        "    <path android:fillColor=\"#000\" ",
+        "    <path android:fillColor=\"${color.toHexString()}\" ")
 }

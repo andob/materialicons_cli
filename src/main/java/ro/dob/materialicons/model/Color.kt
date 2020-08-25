@@ -8,6 +8,9 @@ data class Color
     val name : String
 )
 {
+    private fun Short.toHexString() = toString(radix = 16)
+    fun toHexString() = "#${red.toHexString()}${green.toHexString()}${blue.toHexString()}"
+
     companion object
     {
         fun parse(colorName : String) : Color = when(colorName.toLowerCase())
