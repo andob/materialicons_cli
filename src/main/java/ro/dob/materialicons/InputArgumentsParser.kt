@@ -14,7 +14,7 @@ object InputArgumentsParser
     {
         if (!args.contains(KEY_COLOR))
             throw RuntimeException("Please specify color")
-        if (!args.contains(KEY_SIZE))
+        if (!args.contains(KEY_SIZE)&&!args.contains(KEY_VECTORIAL))
             throw RuntimeException("Please specify size")
 
         val iconName=args[0].replace("~", System.getProperty("user.home"))
@@ -27,7 +27,6 @@ object InputArgumentsParser
         }
 
         val color=Color.parse(args[args.indexOfFirst { it==KEY_COLOR }+1])
-        val size=args[args.indexOfFirst { it==KEY_SIZE }+1].toInt()
         val shouldUseVectorialImage=args.contains(KEY_VECTORIAL)
         val moduleName=if (args.contains(KEY_MODULE))
             args[args.indexOfFirst { it==KEY_MODULE }+1]
@@ -39,11 +38,12 @@ object InputArgumentsParser
                 iconPackFile = iconPackFile,
                 iconName = iconName,
                 color = color,
-                size = size,
                 moduleName = moduleName)
         }
         else
         {
+            val size=args[args.indexOfFirst { it==KEY_SIZE }+1].toInt()
+
             unpackIconPackPNGFiles(
                 iconPackFile = iconPackFile,
                 color = color,

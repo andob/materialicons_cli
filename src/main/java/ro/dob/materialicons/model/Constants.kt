@@ -16,7 +16,8 @@ iconName                 Icon name (access-point) or icon pack path (~/Downloads
                          if you specify an icon name, the icon will be automatically downloaded
 -color <color>           Required, icon color: white, black, grey
                          or custom color in HEX (ex: red=f10000)
--size <size>             Required, icon size in dp: 18, 24, 36, 48
+-size <size>             Required only if you're not using the -vectorial flag
+                         icon size in dp: 18, 24, 36, 48
                          or any other number (size in dp)
 -vectorial               Optional, to import vectorial (XML) icons rather than raster (PNG) icons.
 -moduleName <moduleName> Optional, module name (default value=app)
@@ -28,6 +29,6 @@ Copies black 24dp png icons from the zip to drawable dirs: drawable-.../ic_acces
 java -jar ./material_icons.jar access-point -color red=F21122 -size 15 -moduleName library
 Downloads the icon pack, generates 15dp #F23122 red icons to drawable dirs from the library module: drawable-.../ic_access_point_red_15dp.png
 
-java -jar ./material_icons.jar access-point -color white -size 20 -vectorial
-Downloads the icon pack, generates 20dp white vector icon to drawable dir: drawable/ic_access_point_white_20dp.xml
+java -jar ./material_icons.jar access-point -color white -vectorial
+Downloads the icon pack, generates 24dp white vectorial icon to drawable dir: drawable/ic_access_point_white_24dp.xml
 """

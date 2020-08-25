@@ -53,6 +53,6 @@ fun tintPNGIcon(file : File, color : Color)
 fun tintVectorialIcon(icon : VectorialIcon, color : Color)
 {
     icon.xmlCode=icon.xmlCode.replaceFirst(
-        "    <path android:fillColor=\"#000\" ",
-        "    <path android:fillColor=\"${color.toHexString()}\" ")
+        oldValue = "    <path android:fillColor=\"#000\" ",
+        newValue = "    <path android:fillColor=\"${color.toHexString()}\" ")
 }

@@ -101,7 +101,6 @@ fun unpackIconPackPNGFiles(iconPackFile : File,
 fun unpackIconPackVectorialFile(iconPackFile : File,
                                 iconName : String,
                                 color : Color,
-                                size : Int,
                                 moduleName : String)
 {
     val outputPath : String by lazy { "${System.getProperty("user.dir")}/$moduleName/src/main/res/" }
@@ -142,9 +141,7 @@ fun unpackIconPackVectorialFile(iconPackFile : File,
 
                 tintVectorialIcon(icon = vectorialIcon, color = color)
 
-                resizeVectorialIcon(icon = vectorialIcon, widthInDp = size, heightInDp = size)
-
-                val outputFile=File(outputPath, "drawable/ic_${iconName.replace("-", "_")}_${color.name}_${size}dp.xml")
+                val outputFile=File(outputPath, "drawable/ic_${iconName.replace("-", "_")}_${color.name}_24dp.xml")
 
                 FileOutputStream(outputFile).use { fileOutputStream ->
                     fileOutputStream.write(vectorialIcon.toByteArray())
