@@ -6,7 +6,7 @@ A command line tool to install icons from https://materialdesignicons.com/ into 
 
 ## Setup
 
-[Download the jar package](maven.andob.info/repository/open_source/ro/andob/materialicons/materialicons/1.1.1/materialicons-1.1.1.jar)
+[Download the jar package](http://maven.andob.info/repository/open_source/ro/andob/materialicons/materialicons/1.1.1/materialicons-1.1.1.jar)
 
 ## Installing an icon
 
